@@ -1,12 +1,18 @@
 import sys
+from datetime import datetime
 
 
 def main():
     for line in lines(sys.stdin):
-        print line.upper()
+        now = datetime.utcnow()
+        print now, line.upper()
 
 
 def lines(stream):
+    """
+    Iterator over all lines of text in `stream`.
+    (`stream` must be a file like object).
+    """
     buf = []
     while True:
         character = stream.read(1)
@@ -20,4 +26,7 @@ def lines(stream):
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print '\ncaught CTRL-C'
