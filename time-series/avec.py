@@ -1,11 +1,15 @@
 import sys
 from datetime import datetime
 
+from ping_parser import PingParser
+
 
 def main():
+    parser = PingParser()
     for line in lines(sys.stdin):
         now = datetime.utcnow()
-        print now, line.upper()
+        pingstats = parser.parse(line)
+        print repr(now), repr(pingstats)
 
 
 def lines(stream):
