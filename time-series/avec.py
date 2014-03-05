@@ -9,12 +9,14 @@ def main():
 def lines(stream):
     buf = []
     while True:
-        for character in stream.read(1):
-            if character == '\n':
-                yield "".join(buf)
-                buf = []
-            else:
-                buf.append(character)
+        character = stream.read(1)
+        if character == "":
+            return
+        if character == '\n':
+            yield "".join(buf)
+            buf = []
+        else:
+            buf.append(character)
 
 
 if __name__ == '__main__':
