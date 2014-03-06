@@ -9,7 +9,7 @@ def main():
     for line in lines(sys.stdin):
         now = datetime.utcnow()
         pingstats = parser.parse(line)
-        print repr(now), repr(pingstats)
+        print now, pingstats
 
 
 def lines(stream):
