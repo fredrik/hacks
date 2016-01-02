@@ -1,0 +1,17 @@
+`ts` prepends each line with a high-precision timestamp.
+
+Example usage:
+
+$> ping -c 6 -i 0.5 fakedew.net | ts
+
+2016-01-02T13:06:29.769Z PING fakedew.net (178.79.146.90): 56 data bytes
+2016-01-02T13:06:29.769Z 64 bytes from 178.79.146.90: icmp_seq=0 ttl=51 time=29.032 ms
+2016-01-02T13:06:30.271Z 64 bytes from 178.79.146.90: icmp_seq=1 ttl=51 time=30.628 ms
+2016-01-02T13:06:30.771Z 64 bytes from 178.79.146.90: icmp_seq=2 ttl=51 time=27.926 ms
+2016-01-02T13:06:31.285Z 64 bytes from 178.79.146.90: icmp_seq=3 ttl=51 time=36.587 ms
+2016-01-02T13:06:31.781Z 64 bytes from 178.79.146.90: icmp_seq=4 ttl=51 time=27.578 ms
+2016-01-02T13:06:32.287Z 64 bytes from 178.79.146.90: icmp_seq=5 ttl=51 time=27.521 ms
+2016-01-02T13:06:32.287Z
+2016-01-02T13:06:32.287Z --- fakedew.net ping statistics ---
+2016-01-02T13:06:32.287Z 6 packets transmitted, 6 packets received, 0.0% packet loss
+2016-01-02T13:06:32.287Z round-trip min/avg/max/stddev = 27.521/29.879/36.587/3.187 ms

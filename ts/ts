@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require 'time'
+
+def timestamp
+  # ISO 8601 timestamp in UTC with millisecond precision
+  Time.now.utc.iso8601(3)
+end
+
+$stdin.each do |line|
+  puts "#{timestamp} #{line}"
+end
